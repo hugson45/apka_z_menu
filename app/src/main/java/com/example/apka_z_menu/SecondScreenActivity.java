@@ -25,7 +25,7 @@ public class SecondScreenActivity extends AppCompatActivity {
         cofnij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent cofnij = new Intent("MainActivity.this");
+                Intent cofnij = new Intent(SecondScreenActivity.this,MainActivity.class);
                 startActivity(cofnij);
             }
         });
