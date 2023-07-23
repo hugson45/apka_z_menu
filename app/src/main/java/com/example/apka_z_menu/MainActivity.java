@@ -1,9 +1,11 @@
 package com.example.apka_z_menu;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.Ustawienia) {
             Toast.makeText(this, "Wybrales Ustawienia", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, SecondScreenActivity.class));;
             return true;
+
+
         }
         if (item.getItemId() == R.id.alarm) {
             Toast.makeText(this, "Wybrales Alarm", Toast.LENGTH_SHORT).show();
