@@ -1,14 +1,32 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
 plugins {
     id 'com.android.application'
 }
 
+configurations.all {
+    resolutionStrategy {
+        eachDependency {
+            if ((requested.group == "org.jetbrains.kotlin") && (requested.name.startsWith("kotlin-stdlib"))) {
+                useVersion("1.8.0")
+            }
+        }
+    }
+}
 android {
     namespace 'com.example.apka_z_menu'
     compileSdk 33
 
     defaultConfig {
         applicationId "com.example.apka_z_menu"
-        minSdk 19
+        minSdk 22
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -26,12 +44,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    ndkVersion '25.1.8937393'
+    buildToolsVersion '34.0.0'
 }
 
 dependencies {
 
+    implementation 'androidx.compose.material3:material3:1.1.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
