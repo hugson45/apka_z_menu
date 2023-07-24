@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
         miasta = findViewById(R.id.lista);
         student = findViewById(R.id.spinner);
-        hello = findViewById(R.id.tekst);
-        hello.setText(getString(R.string.hello));
 
 
       /*  ArrayList<String> students = new ArrayList<>();
